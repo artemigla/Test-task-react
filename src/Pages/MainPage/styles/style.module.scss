@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    display: flex;
+    grid-template-columns: 1fr 4fr;
+    width: 100%;
+    min-height: 90vh;
+    background-color: var(--bg-color);
+    transition: 0.25s;
+    z-index: -10;
+
+    //Позиция иконок скрытого сайдбара
+    .icons {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    .content {
+        margin-left: 25px;
+        margin-top: 130px;
+        width: 100%;
+        padding: 0 5px 0 5px;
+        color: var(--text-color);
+
+        .loadmore {
+            display: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    }
+
+    td {
+        text-align: center;
+        padding: 5px 0 5px 0;
+    }
+
+    thead {
+        tr:nth-child(odd) {
+            background: rgb(179, 181, 182);
+        }
+        tr:nth-child(even) {
+            background: rgb(77, 78, 78);
+        }
+    }
+
+    .sidebar {
+        margin-top: 120px;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        border-radius: 5px;
+        transition: 0.25s;
+        box-shadow: 10px 0 10px 0 rgba(87, 85, 85, 0.5);
+        z-index: 1;
+
+        .info {
+            width: 250px;
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+
+                .icon {
+                    margin-top: auto;
+                    margin-left: 10px;
+                }
+
+                a {
+                    display: flex;
+                    text-decoration: none;
+                    margin-top: 10px;
+                    margin-left: auto;
+                    margin-right: 5px;
+                    font-size: 21px;
+                    color: var(--link-color);
+                }
+            }
+        }
+
+        .showsidebar {
+            font-size: 21px;
+            border-radius: 5px;
+            cursor: pointer;
+            color: var(--text-color);
+            z-index: 1;
+        }
+
+        button {
+            margin: 5px;
+            border: none;
+            background: none;
+            border-radius: 3px;
+        }
+    }
+
+    .sidebarHidden {
+        .info {
+            display: none;
+        }
+
+        width: 30px;
+        margin-top: 120px;
+        background-color: rgba(240, 192, 37, 0.3);
+
+        .showsidebar {
+            border-radius: 5px;
+            border: none;
+            font-size: 21px;
+            cursor: pointer;
+            color: var(--text-color);
+            z-index: 1;
+        }
+
+        button {
+            margin: 5px;
+            border: none;
+            background: none;
+            border-radius: 3px;
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .sidebar {
+        display: none;
+
+        .icon {
+            display: none;
+        }
+    }
+
+    .main {
+        // Было замечание, что для моб. устройств не видно footer'a, нужно было скроллить вниз
+        // Решил этой строчкой...
+        min-height: 85vh;
+        .sidebarHidden {
+            display: none;
+        }
+    }
+
+    .closetable {
+        display: none;
+    }
+
+    .content {
+        .table {
+            .loadmore {
+                display: block;
+            }
+        }
+    }
+}

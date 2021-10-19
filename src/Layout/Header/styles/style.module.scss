@@ -1,0 +1,121 @@
+:root {
+    --text-color: rgb(0, 0, 0);
+    --bg-color: rgba(255, 255, 255, 1);
+    --light-color: rgba(230, 230, 230, 1);
+    --link-color: rgba(141, 139, 139, 0.9);
+}
+
+.darktheme {
+    --text-color: #ffffff;
+    --bg-color: #5f5f5f;
+    --light-color: rgb(77, 77, 77);
+    --link-color: rgba(221, 214, 214, 0.9);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        color: var(--text-color);
+    }
+}
+
+.darkmode {
+    display: flex;
+    position: fixed;
+    top: 15px;
+    left: 80%;
+    z-index: 10;
+}
+
+input[type="checkbox"] {
+    width: 40px;
+    height: 21px;
+    -webkit-appearance: none;
+    background: #c6c6c6;
+    outline: none;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-top: auto;
+    transition: 0.25s;
+}
+
+input:checked[type="checkbox"] {
+    background: #03a9f4;
+    transition: 0.25s;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    top: 1.5px;
+    background: #a1f1f1;
+    transform: scale(1.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input:checked[type="checkbox"]::before {
+    left: 25px;
+}
+
+.header {
+    display: grid;
+    position: fixed;
+    grid-template-columns: 1fr 1fr 0.7fr;
+    width: 100%;
+    height: 120px;
+    top: 0%;
+    transition: 0.25s;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    background-color: var(--light-color);
+    z-index: 10;
+
+    .titile {
+        display: flex;
+        padding-left: 15px;
+        font-size: 21px;
+        align-items: center;
+        margin-right: auto;
+        color: var(--text-color);
+        white-space: nowrap;
+        transition: 0.25s;
+        height: 100%;
+        transform: rotate(-15deg);
+    }
+
+    .languages {
+        margin-top: 10px;
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .header {
+        .titile {
+            transform: rotate(0deg);
+        }
+    }
+
+    .darkmode {
+        display: none;
+    }
+
+    .darkmobile {
+        background: none;
+        border: none;
+        position: fixed;
+        width: 21px;
+        height: 21px;
+        color: var(--text-color);
+        cursor: pointer;
+        top: 15px;
+        font-size: 21px;
+        left: 80%;
+        z-index: 10;
+    }
+}

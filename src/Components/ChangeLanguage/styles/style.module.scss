@@ -1,0 +1,53 @@
+.content {
+    display: flex;
+    margin-right: 10px;
+    margin-left: auto;
+
+    
+    .eng {
+        width: 30px;
+        height: 20px;
+        margin-right: 5px;
+        background-image: url("../../../Assets/Images/English.png");
+        background-size: 100%;
+        border: none;
+        cursor: pointer;
+    }
+
+    .ru {
+        width: 30px;
+        height: 20px;
+        margin-right: 5px;
+        background-image: url("../../../Assets/Images/Russian.png");
+        background-size: 100%;
+        border: none;
+        cursor: pointer;
+    }
+
+    .ua {
+        width: 30px;
+        height: 20px;
+        margin-right: 5px;
+        background-image: url("../../../Assets/Images/Ukraine.png");
+        background-size: 100%;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.selectlanguage{
+    display: none;
+}
+
+@media screen and (max-width: 720px) {
+    .content {
+        display: none;
+    }
+
+    .selectlanguage{
+        display: block;
+        background: none;
+        border: 1px solid var(--text-color);
+        color: var(--text-color);
+    }
+}
